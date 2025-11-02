@@ -9,13 +9,10 @@ export default function LoginPage() {
 
     const handleLogin = (e) => {
         e.preventDefault();
-
-        // Simple demo credentials
         const validEmail = "admin@tradeshift.com";
         const validPassword = "123456";
 
         if (email === validEmail && password === validPassword) {
-            // Save mock token
             localStorage.setItem("token", "mock-jwt-token");
             navigate("/dashboard");
         } else {
