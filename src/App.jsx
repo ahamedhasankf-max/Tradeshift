@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import DashboardPage from "./pages/DashboardPage.jsx";
 import PortfolioPage from "./pages/PortfolioPage.jsx";
 import ProtectedRoute from "./routes/ProtectedRoute.jsx";
+import Registration from './components/Registration';
 
 export default function App() {
     return (
@@ -38,6 +39,11 @@ export default function App() {
 
                     {/* Catch-all fallback */}
                     <Route path="*" element={<Navigate to="/login" />} />
+
+                    
+        <Route path="/register" element={<Registration />} />
+        {/* Your other routes */}
+      
                 </Routes>
             </div>
         </Router>

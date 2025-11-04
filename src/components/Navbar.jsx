@@ -9,6 +9,11 @@ export default function Navbar() {
         navigate("/login");
     };
 
+    const handleRegister = () => {
+        localStorage.removeItem("token");
+        navigate("/Register");
+    };
+
     return (
         <nav className="bg-white shadow-md p-4 flex justify-between items-center">
             <h1 className="text-xl font-bold text-indigo-600">TradeShift</h1>
@@ -24,6 +29,12 @@ export default function Navbar() {
                     className="text-red-500 hover:text-red-700 font-medium"
                 >
                     Logout
+                </button>
+                 <button
+                    onClick={handleRegister}
+                    className="text-red-500 hover:text-red-700 font-medium"
+                >
+                    Register
                 </button>
             </div>
         </nav>
