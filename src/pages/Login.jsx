@@ -11,6 +11,8 @@ export default function Login() {
       };
 
     const handleLogin = (e) => {
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("role", response.data.role);
         e.preventDefault();
         const raw = localStorage.getItem("tradeshift_users");
             let users = [];

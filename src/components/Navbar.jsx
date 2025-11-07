@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
     const navigate = useNavigate();
+    const role = localStorage.getItem("role");
 
     const handleLogout = () => {
         localStorage.removeItem("token");
@@ -18,17 +19,23 @@ export default function Navbar() {
         <nav className="bg-white shadow-md p-4 flex justify-between items-center">
             <h1 className="text-xl font-bold text-indigo-600">TradeShift</h1>
             <div className="space-x-4">
-                <Link to="/dashboard" className="text-gray-600 hover:text-indigo-600">
-                    Dashboard
-                </Link>
-                <Link to="/portfolio" className="text-gray-600 hover:text-indigo-600">
-                    Portfolio
-                </Link>
+                <Link to="/">Home</Link>
+                        {role === "admin" && (
+                          <>
+                            <Link to="/dashboard">Dashboard</Link>
+                            <Link to="/portfolio">Portfolio</Link>
+                          </>
+                        )}
+                        {role === "user" && (
+                          <>
+                            <Link to="/portfolio">Portfolio</Link>
+                          </>
+                        )}
                 <button
                     onClick={handleLogout}
                     className="text-red-500 hover:text-red-700 font-medium"
                 >
-                    Logout
+                    Login
                 </button>
                  <button
                     onClick={handleRegister}
