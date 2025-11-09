@@ -11,8 +11,7 @@ export default function Login() {
       };
 
     const handleLogin = (e) => {
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem("role", response.data.role);
+
         e.preventDefault();
         const raw = localStorage.getItem("tradeshift_users");
             let users = [];
@@ -33,9 +32,9 @@ export default function Login() {
             }
         localStorage.setItem("tradeshift_currentUser", JSON.stringify(user));
         if (user.role === "Admin") {
-              navigate("/portfolio");
-            } else {
               navigate("/dashboard");
+            } else {
+              navigate("/portfolio");
             }
           };
 
