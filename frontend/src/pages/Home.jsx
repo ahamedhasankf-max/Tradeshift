@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 export default function Home() {
   return (
     <div className="bg-gradient-to-b from-blue-50 to-white min-h-screen flex flex-col justify-center items-center text-center px-4">
