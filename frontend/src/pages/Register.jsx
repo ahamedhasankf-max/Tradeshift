@@ -60,7 +60,7 @@ export default function Register() {
   setErrors({});
 
   try {
-    const response = await fetch("http://localhost:8080/users/register", {
+    const response = await fetch("http://tradeshift-asvu.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
