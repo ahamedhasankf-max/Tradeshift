@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://tradeshift-asvu.onrender.com',  // Spring Boot backend
+  baseURL: 'https://tradeshift-asvu.onrender.com',  // Spring Boot backend
   withCredentials: false             // we use JWT, not cookies
 });
 
